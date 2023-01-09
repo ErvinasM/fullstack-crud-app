@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Infinity Movies</title>
+        <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.2.0/css/all.css">
+        <link rel="stylesheet" href="./assets/css/main.css">
+        <script src="./assets/js/main.js" defer type="module"></script>
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <header>
+            <div class="header-inner">
+                <div class="hinner-left"><i class="fa-regular fa-infinity"></i>Infinity</div>
+                <div class="hinner-right">
+                    <div id="adminbtn" onclick="adminDashboard()" class="admin-btn disabled"><i class="fa-regular fa-screwdriver-wrench"></i><a>Admin Dashboard</a></div>
+                    <div onclick="logout()" class="logout-btn"><a>Log out</a></div>
+                </div>
+            </div>
+        </header>
+        <div id="root"></div>
+    </body>
+
+    <script type="text/javascript" src="./assets/js/md5.js"></script>
+    <script src="./assets/js/manager.js"></script>
+
+    <script>
+        function logout()
+            {
+                setCookie("userpass", '', 0);
+                window.location.href = "./login.html";
+            }
+    </script>
+
+    <script>
+        $(document).ready(function () 
+            {
+                function checkCookie(data, user, pass)
+                    {
+                        const fuser = data.filter(dt => dt.username == user && dt.password == pass);
+                        if(fuser.length == 0)
+                            {
+                                window.location.href = "./login.html";
+                            }
+                        else
+                            {
+                                if (fuser[0].isAdmin == true)
+                                    {
+                                        up = document.getElementById("adminbtn");
+                                        up.classList.remove("disabled");
+                                    }
+                            }
+                    }
+                
+                const cookievalue = getCookie("userpass");
+
+                if (cookievalue !== null)
+                    {
+                        const cValues = cookievalue.split("_");
+                        fetch("http://localhost:3000/users")
+                        .then(res => res.json())
+                        .then(data => checkCookie(data, cValues[0], cValues[1]))
+                        .catch(e => console.log(e.message))
+                    }
+                else
+                    {
+                        window.location.href = "./login.html";
+                    }
+                });
+        </script>
+</html>
