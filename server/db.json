@@ -1,81 +1,80 @@
 {
-    "users": [
-      {
-        "id": 1,
-        "username": "admindemo",
-        "email": "admindemo@emailtestas.lt",
-        "password": "0192023a7bbd73250516f069df18b500",
-        "verified": true,
-        "isAdmin": true,
-        "subscription": 3,
-        "created": 1618665399
-      },
-      {
-        "id": 2,
-        "username": "demouser",
-        "email": "demouser@emailtestas.lt",
-        "password": "0192023a7bbd73250516f069df18b500",
-        "verified": true,
-        "isAdmin": false,
-        "subscription": 3,
-        "created": 1601522919
-      }
-    ],
-
-    "content": [
-      {
-        "id": 1,
-        "title": "Incredibles 2",
-        "year": 2018,
-        "description": "Set in a retro-futuristic version of the 1960s, the film follows Bob and Helen Parr, a couple of superheroes, known as Mr. Incredible and Elastigirl, who hide their powers in accordance with a government mandate, and attempt to live a quiet suburban life with their three children.",
-        "poster": "https://theposterdb.com/api/assets/476/view",
-        "trailer": "https://www.youtube.com/watch?v=i5qOzqD9Rms",
-        "subscription": 2
-      },
-      {
-        "id": 2,
-        "title": "Avatar: The Way of Water",
-        "year": 2022,
-        "description": "Set more than a decade after the events of the first film, “Avatar: The Way of Water” begins to tell the story of the Sully family (Jake, Neytiri, and their kids), the trouble that follows them, the lengths they go to keep each other safe, the battles they fight to stay alive,  and the tragedies they endure.",
-        "poster": "https://theposterdb.com/api/assets/234653/view",
-        "trailer": "https://www.youtube.com/watch?v=a8Gx8wiNbs8",
-        "subscription": 3
-      },
-      {
-        "id": 3,
-        "title": "The Menu",
-        "year": 2022,
-        "description": "A couple travels to a coastal island to eat at an exclusive restaurant where the chef has prepared a lavish menu, with some shocking surprises.",
-        "poster": "https://theposterdb.com/api/assets/257783/view",
-        "trailer": "https://www.youtube.com/watch?v=C_uTkUGcHv4",
-        "subscription": 3
-      },
-      {
-        "id": 4,
-        "title": "Puss In Boots: The Last Wish",
-        "year": 2022,
-        "description": "Puss in Boots discovers that his passion for peril and disregard for safety have taken their toll. Puss has burned through eight of his nine lives, though he lost count along the way. Getting those lives back will send Puss in Boots on his grandest quest yet.",
-        "poster": "https://theposterdb.com/api/assets/243085/view",
-        "trailer": "https://www.youtube.com/watch?v=RqrXhwS33yc",
-        "subscription": 3
-      },
-      {
-        "id": 5,
-        "title": "Tenet",
-        "year": 2020,
-        "description": "Armed with only one word, Tenet, and fighting for the survival of the entire world, a Protagonist journeys through a twilight world of international espionage on a mission that will unfold in something beyond real time.",
-        "poster": "https://theposterdb.com/api/assets/96450/view",
-        "trailer": "https://www.youtube.com/watch?v=LdOM0x0XDMo",
-        "subscription": 2
-      },
-      {
-        "id": 6,
-        "title": "Titanic",
-        "year": 1997,
-        "description": "A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic.",
-        "poster": "https://theposterdb.com/api/assets/101704/view",
-        "trailer": "https://www.youtube.com/watch?v=tXbGHqiAmME",
-        "subscription": 1
-      }
-    ]
-  }
+  "users": [
+    {
+      "id": 1,
+      "username": "admindemo",
+      "email": "admindemo@emailtestas.lt",
+      "password": "0192023a7bbd73250516f069df18b500",
+      "verified": true,
+      "isAdmin": true,
+      "subscription": 3,
+      "created": 1618665399
+    },
+    {
+      "id": 2,
+      "username": "demouser",
+      "email": "demouser@emailtestas.lt",
+      "password": "0192023a7bbd73250516f069df18b500",
+      "verified": true,
+      "isAdmin": false,
+      "subscription": 3,
+      "created": 1601522919
+    }
+  ],
+  "content": [
+    {
+      "id": "1",
+      "title": "Incredibles 2",
+      "year": "2018",
+      "description": "Set in a retro-futuristic version of the 1960s, the film follows Bob and Helen Parr, a couple of superheroes, known as Mr. Incredible and Elastigirl, who hide their powers in accordance with a government mandate, and attempt to live a quiet suburban life with their three children.",
+      "poster": "https://theposterdb.com/api/assets/476/view",
+      "trailer": "https://www.youtube.com/watch?v=i5qOzqD9Rms",
+      "subscription": 2
+    },
+    {
+      "id": "2",
+      "title": "Avatar: The Way of Water",
+      "year": "2022",
+      "description": "Set more than a decade after the events of the first film, “Avatar: The Way of Water” begins to tell the story of the Sully family (Jake, Neytiri, and their kids), the trouble that follows them, the lengths they go to keep each other safe, the battles they fight to stay alive,  and the tragedies they endure.",
+      "poster": "https://theposterdb.com/api/assets/234653/view",
+      "trailer": "https://www.youtube.com/watch?v=a8Gx8wiNbs8",
+      "subscription": "3"
+    },
+    {
+      "id": "3",
+      "title": "The Menu",
+      "year": "2022",
+      "description": "A couple travels to a coastal island to eat at an exclusive restaurant where the chef has prepared a lavish menu, with some shocking surprises.",
+      "poster": "https://theposterdb.com/api/assets/257783/view",
+      "trailer": "https://www.youtube.com/watch?v=C_uTkUGcHv4",
+      "subscription": "3"
+    },
+    {
+      "id": "4",
+      "title": "Puss In Boots: The Last Wish",
+      "year": "2022",
+      "description": "Puss in Boots discovers that his passion for peril and disregard for safety have taken their toll. Puss has burned through eight of his nine lives, though he lost count along the way. Getting those lives back will send Puss in Boots on his grandest quest yet.",
+      "poster": "https://theposterdb.com/api/assets/243085/view",
+      "trailer": "https://www.youtube.com/watch?v=RqrXhwS33yc",
+      "subscription": "3"
+    },
+    {
+      "id": "5",
+      "title": "Tenet",
+      "year": "2020",
+      "description": "Armed with only one word, Tenet, and fighting for the survival of the entire world, a Protagonist journeys through a twilight world of international espionage on a mission that will unfold in something beyond real time.",
+      "poster": "https://theposterdb.com/api/assets/96450/view",
+      "trailer": "https://www.youtube.com/watch?v=LdOM0x0XDMo",
+      "subscription": "2"
+    },
+    {
+      "id": "6",
+      "title": "Titanic",
+      "year": "1997",
+      "description": "A seventeen-year-old aristocrat falls in love with a kind but poor artist aboard the luxurious, ill-fated R.M.S. Titanic.",
+      "poster": "https://theposterdb.com/api/assets/101704/view",
+      "trailer": "https://www.youtube.com/watch?v=tXbGHqiAmME",
+      "subscription": "1"
+    }
+  ]
+}

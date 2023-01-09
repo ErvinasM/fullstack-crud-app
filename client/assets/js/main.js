@@ -1,60 +1,60 @@
 import AlertComponent from "../components/alert-component.js";
-import CarFormComponent from "../components/car-form-component.js";
-import CarsTableComponent from "../components/cars-table-component.js";
+import ContentFormComponent from "../components/content-form-component.js";
+import ContentTableComponent from "../components/contents-table-component.js";
 import ContainerComponent from "../components/container-component.js";
 import FlexContainerComponent from "../components/flex-container-component.js";
 import ApiService from "../services/api-service.js";
 
-let carsTableComponent;
-let carFormComponent;
+let contentTableComponent;
+let contentFormComponent;
 let alertComponent;
 
-let cars;
+let contents;
 let editedRowId = null;
 
-const handleCarDelete = async (id) => {
+const handleContentDelete = async (id) => {
   try {
-    await ApiService.deleteCar(id);
-    cars = await ApiService.getCars();
-    carsTableComponent.renderCars(cars, editedRowId);
+    await ApiService.deleteContent(id);
+    contents = await ApiService.getContent();
+    contentTableComponent.renderContents(contents, editedRowId);
   } catch (error) {
     alertComponent.show(error.message);
   }
 }
 
-const handleCarCreate = async (carProps) => {
+const handleContentCreate = async (contentProps) => {
   try {
-    await ApiService.createCar(carProps);
-    cars = await ApiService.getCars();
-    carsTableComponent.renderCars(cars, editedRowId);
+    await ApiService.createContent(contentProps);
+    contents = await ApiService.getContent();
+    contentTableComponent.renderContents(contents, editedRowId);
   } catch (error) {
     alertComponent.show(error.message);
   }
 }
 
-const handleCarUpdate = async (carProps) => {
+const handleContentUpdate = async (contentProps) => {
   try {
-    await ApiService.updateCar(editedRowId, carProps);
-    cars = await ApiService.getCars();
+    await ApiService.updateContent(editedRowId, contentProps);
+    contents = await ApiService.getContent();
     editedRowId = null;
-    carFormComponent.disableEditing();
-    carsTableComponent.renderCars(cars, editedRowId);
+    contentFormComponent.disableEditing();
+    contentTableComponent.renderContents(contents, editedRowId);
   } catch (error) {
     alertComponent.show(error.message);
   }
 }
 
-const handleCarEdit = (carProps) => {
-  if (editedRowId === carProps.id) editedRowId = null;
-  else editedRowId = carProps.id;
+const handleContentEdit = (contentProps) => {
+  if (editedRowId === contentProps.id) editedRowId = null;
+  else editedRowId = contentProps.id;
 
-  carsTableComponent.renderCars(cars, editedRowId);
+  contentTableComponent.renderContents(contents, editedRowId);
   if (editedRowId === null) {
-    carFormComponent.disableEditing();
-    carFormComponent.onSubmit = handleCarCreate;
+    contentFormComponent.disableEditing();
+    contentFormComponent.onSubmit = handleContentCreate;
   } else {
-    carFormComponent.enableEditing(carProps);
-    carFormComponent.onSubmit = handleCarUpdate;
+    contentFormComponent.enableEditing(contentProps);
+    contentFormComponent.onSubmit = handleContentUpdate;
   }
 }
 
@@ -65,17 +65,17 @@ const handleCarEdit = (carProps) => {
   containerComponent.addComponents(alertComponent);
   rootHtmlElement.append(containerComponent.htmlElement);
   try {
-    cars = await ApiService.getCars();
-    carsTableComponent = new CarsTableComponent({
-      cars,
-      onDelete: handleCarDelete,
-      onEdit: handleCarEdit,
+    contents = await ApiService.getContent();
+    contentTableComponent = new ContentTableComponent({
+      contents,
+      onDelete: handleContentDelete,
+      onEdit: handleContentEdit,
     });
-    carFormComponent = new CarFormComponent({
-      onSubmit: handleCarCreate,
+    contentFormComponent = new ContentFormComponent({
+      onSubmit: handleContentCreate,
     });
     const flexContainerComponent = new FlexContainerComponent();
-    flexContainerComponent.addComponents(carsTableComponent, carFormComponent);
+    flexContainerComponent.addComponents(contentTableComponent, contentFormComponent);
     containerComponent.addComponents(flexContainerComponent);
   } catch (error) {
     alertComponent.show(error.message);
